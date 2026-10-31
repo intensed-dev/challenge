@@ -1,0 +1,12 @@
+name = "challenge-api"
+main = "worker.js"
+compatibility_date = "2026-10-31"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "challenge"
+database_id = "SET_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "DRAWINGS"
+bucket_name = "challenge-drawings"
