@@ -1,1 +1,1 @@
-window.CHALLENGE_CONFIG={API_URL:"https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev",ITEMS_API:"https://blocksitems.com/api/2026.1.2",MINECRAFT_VERSION:"1.21.1"};
+window.CHALLENGE_CONFIG={API_URL:"https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev",ITEMS_API:"https://blocksitems.com/api/2026.1.2",MINECRAFT_VERSION:"26.3"};
