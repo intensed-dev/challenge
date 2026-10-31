@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <title>Challenge – Zeichnen</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+  <script src="../src/js/config.js"></script>
+  <script defer src="../src/js/app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="../">CHALLENGE<span>.</span></a><span class="tag">MINECRAFT DRAW</span></header>
+    <section class="panel" id="join-panel">
+      <p class="eyebrow">TEILNEHMEN</p>
+      <h1>Beitreten</h1>
+      <p class="muted">Gib deinen Namen und den Teilnahme-Code ein.</p>
+      <form id="join-form" class="stack">
+        <label>Spielername<input name="name" maxlength="24" required autocomplete="nickname" placeholder="Minecraft-Name"></label>
+        <label>Teilnahme-Code<input name="code" maxlength="12" required placeholder="Code"></label>
+        <button class="primary">Beitreten</button>
+      </form>
+      <p class="notice" id="join-message" aria-live="polite"></p>
+    </section>
+    <section class="panel hidden" id="draw-panel">
+      <div class="split"><div><p class="eyebrow">ZEICHNUNGSPHASE</p><h1 id="player-title">Deine Zeichnungen</h1></div><div class="timer" id="timer">05:00</div></div>
+      <p class="muted" id="phase-label">Warte auf den Start durch den Admin.</p>
+      <form id="drawing-form" class="stack">
+        <label>Item-ID<input id="item-id" autocomplete="off" placeholder="z. B. golden_carrot" required></label>
+        <div id="item-results" class="item-results hidden" role="listbox" aria-label="Item-Auswahl"></div>
+        <div id="selected-item" class="selected-item hidden"></div>
+        <label>Anzahl<input id="quantity" type="number" min="1" max="9999" value="1" required></label>
+        <label>Zeichnung
+          <canvas id="canvas" width="900" height="560" aria-label="Zeichenfläche"></canvas>
+        </label>
+        <div class="toolbar">
+          <button type="button" class="secondary" id="undo">Rückgängig</button>
+          <button type="button" class="secondary" id="clear">Leeren</button>
+          <input type="color" id="pen-color" value="#17191f" aria-label="Stiftfarbe">
+          <input type="range" id="pen-size" min="2" max="28" value="7" aria-label="Stiftgröße">
+        </div>
+        <button class="primary" id="submit-drawing">Zeichnung abgeben</button>
+      </form>
+      <p class="notice" id="draw-message" aria-live="polite"></p>
+      <div class="divider"></div>
+      <h2>Deine Abgaben <span class="count" id="drawing-count">0</span></h2>
+      <div class="drawing-grid" id="my-drawings"></div>
+    </section>
+    <section class="panel hidden" id="waiting-panel">
+      <p class="eyebrow">ABGESCHLOSSEN</p><h1>Zeichnungsphase beendet</h1><p class="muted">Deine Abgaben wurden gespeichert. Die Ergebnisse erscheinen hier, sobald der Admin die Runde abgeschlossen hat.</p>
+    </section>
+    <section class="panel hidden" id="results-panel"><p class="eyebrow">ERGEBNISSE</p><h1>Deine Runde</h1><div id="player-results"></div></section>
+  </main>
+</body>
+</html>
