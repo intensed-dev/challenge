@@ -1,33 +1,8 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Challenge – Admin</title><link rel="stylesheet" href="../src/css/style.css">
-  <script src="../src/js/config.js"></script><script defer src="../src/js/admin.js"></script>
-</head>
-<body>
-  <main class="shell wide">
-    <header class="topbar"><a class="brand" href="../">CHALLENGE<span>.</span></a><span class="tag">ADMIN DASHBOARD</span></header>
-    <section class="panel" id="admin-login">
-      <p class="eyebrow">ZUGRIFF</p><h1>Admin-Dashboard</h1>
-      <form id="admin-login-form" class="stack"><label>Admin-Code<input name="secret" type="password" required autocomplete="current-password"></label><button class="primary">Anmelden</button></form>
-      <p class="notice" id="admin-message" aria-live="polite"></p>
-    </section>
-    <div id="admin-app" class="hidden">
-      <section class="panel">
-        <div class="split"><div><p class="eyebrow">RUNDE</p><h1>Steuerung</h1></div><span class="status" id="phase-status">Nicht gestartet</span></div>
-        <div id="create-round" class="stack"><label>Teilnahme-Code<input id="join-code" maxlength="12" placeholder="z. B. PVP26"></label><button class="primary" id="create-challenge">Neue Runde erstellen</button></div>
-        <div id="round-controls" class="hidden">
-          <p class="muted">Teilnahme-Code: <strong id="active-code"></strong></p>
-          <div class="toolbar"><button class="primary" id="start-timer">Timer starten</button><button class="secondary" id="pause-timer">Pausieren</button><button class="secondary" id="finish-drawing">Zeichnungsphase beenden</button></div>
-          <div class="timer" id="admin-timer">05:00</div>
-        </div>
-      </section>
-      <section class="panel"><div class="split"><div><p class="eyebrow">LIVE</p><h2>Teilnehmer</h2></div><span class="count" id="player-count">0</span></div><div id="players" class="player-list"></div></section>
-      <section class="panel"><p class="eyebrow">EINGÄNGE</p><h2>Zeichnungen</h2><p class="muted">Alle Abgaben werden live angezeigt und nach Spieler gruppiert.</p><div id="submissions"></div></section>
-      <section class="panel"><p class="eyebrow">BEWERTUNG</p><h2>Erraten lassen</h2><p class="muted">Zeige die Zeichnung einer externen Person. Trage danach nur ein, ob die Antwort richtig war.</p><div id="review-list"></div></section>
-      <section class="panel"><p class="eyebrow">ABSCHLUSS</p><h2>Ergebnisübersicht</h2><button class="primary" id="publish-results">Ergebnisse für alle freigeben</button><div id="admin-results"></div></section>
-    </div>
-  </main>
-</body>
-</html>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Challenge – Admin</title><link rel="stylesheet" href="../src/css/style.css"><script defer src="../src/js/config.js"></script><script defer src="../src/js/admin.js"></script></head><body><main class="shell wide"><header class="topbar"><a class="brand" href="../">CHALLENGE<span>.</span></a><span class="tag">ADMIN</span></header>
+<section class="panel" id="admin-login"><p class="eyebrow">ZUGRIFF</p><h1>Admin-Dashboard</h1><form id="admin-login-form" class="stack"><label>Admin-Code<input name="secret" type="password" required autocomplete="current-password"></label><button class="primary">Anmelden</button></form><p class="notice" id="admin-message" aria-live="polite"></p></section>
+<div id="admin-app" class="hidden"><section class="panel"><div class="split"><div><p class="eyebrow">RUNDE</p><h1>Steuerung</h1></div><span class="status" id="phase-status">Nicht gestartet</span></div><div id="create-round" class="stack"><label>Teilnahme-Code<input id="join-code" maxlength="16" placeholder="z. B. DRAW26"></label><button class="primary" id="create-challenge">Neue Runde erstellen</button></div><div id="round-controls" class="hidden"><p class="muted">Teilnahme-Code: <strong id="active-code"></strong></p><div class="toolbar"><button class="primary" id="start-timer">Timer starten</button><button class="secondary" id="pause-timer">Pausieren</button><button class="secondary" id="finish-drawing">Zeichnungsphase beenden</button></div><div class="timer" id="admin-timer">05:00</div></div></section>
+<section class="panel"><div class="split"><div><p class="eyebrow">LIVE</p><h2>Teilnehmer</h2></div><span class="count" id="player-count">0</span></div><div id="players" class="player-list"></div></section>
+<section class="panel"><p class="eyebrow">LIVE-ÜBERSICHT</p><h2>Zeichnungen</h2><div id="submissions"></div></section>
+<section class="panel"><p class="eyebrow">BEWERTUNG</p><h2>Erraten lassen</h2><p class="muted">Zeige die Zeichnung einer dritten Person. Entscheide danach, ob das Item richtig erraten wurde.</p><div id="review-list"></div></section>
+<section class="panel"><p class="eyebrow">DUELL</p><h2>Mobkills eintragen</h2><p class="muted">Nach den 30 Minuten die Mobkills beider Spieler eintragen.</p><div id="duel-scores" class="score-grid"></div><button class="primary" id="save-scores">Mobkill-Ergebnis speichern</button><p class="notice" id="score-message"></p></section>
+<section class="panel"><p class="eyebrow">ERGEBNISSE</p><h2>Freigabe</h2><button class="primary" id="publish-results">Ergebnisse für alle freigeben</button><div id="admin-results"></div></section></div></main></body></html>
